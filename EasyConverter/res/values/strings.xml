@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EasyConverter</string>
+    <string name="explanation">Convert from a devise to another. If it can\'t goes online, then it will used cached value</string>
+</resources>
