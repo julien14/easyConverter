@@ -66,11 +66,10 @@ public class MainActivity extends Activity implements
 			}
 		}
 		
-		
 		if (!currenciesHelper.isCurrenciesListAvailable()) {
 			Toast.makeText(
 					this,
-					"You must connect to internet in order to download the change rates",
+					getString(R.string.internet_connection_needed),
 					Toast.LENGTH_LONG).show();
 			CurrenciesRequest request = new CurrenciesRequest(this, this);
 			mVolleyRequestQueue.add(request);
@@ -136,7 +135,6 @@ public class MainActivity extends Activity implements
 	@Override
 	public void onErrorResponse(VolleyError arg0) {
 		// TODO To handle the error
-
 	}
 
 	@Override
