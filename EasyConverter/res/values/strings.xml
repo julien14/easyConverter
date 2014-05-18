@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">EasyConverter</string>
-    <string name="explanation">Convert from a devise to another. If it can\'t goes online, then it will used cached value</string>
+    <string name="explanation">Convert from a devise to another. If it can\'t goes online, then it will used cached value.
+    The change rates date is shown below</string>
     <string name="internet_connection_needed">You must connect to internet in order to download the change rates</string>
 </resources>
