@@ -60,7 +60,7 @@ public class MainActivity extends Activity implements
 		if(cache.exists()) {
 			try {
 				String xmlContent = readFileAsString(cache);
-				onResponse(xmlContent);
+				fillSpinner(xmlContent, true);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -74,11 +74,6 @@ public class MainActivity extends Activity implements
 			CurrenciesRequest request = new CurrenciesRequest(this, this);
 			mVolleyRequestQueue.add(request);
 		} else if(!currenciesHelper.hasListBeenUpdated()) {
-			try {
-				fillSpinner(readFileAsString(cache), true);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 			CurrenciesRequest request = new CurrenciesRequest(this, this);
 			mVolleyRequestQueue.add(request);
 		}
@@ -145,6 +140,10 @@ public class MainActivity extends Activity implements
 	private void fillSpinner(String xmlStringResponse, boolean fromCache) {
 		CurrenciesListParser parser = new CurrenciesListParser(this,xmlStringResponse);
 		currenciesHelper.setCurrenciesList(parser.parse(), !fromCache);
+		
+		TextView dateTextView = (TextView) findViewById(R.id.dateTextBox);
+		dateTextView.setText(parser.getSourceDate());
+		
 		CurrenciesArrayAdapter adapter = new CurrenciesArrayAdapter(this,
 				currenciesHelper.getCurrenciesList());
 		rightCurrenciesSpinner.setAdapter(adapter);

@@ -34,6 +34,7 @@ public class CurrenciesListParser {
 	private Document document;
 	private SAXBuilder sxb;
 	private Context context;
+	private String sourceDate;
 
 	public CurrenciesListParser(Context context) {
 		sxb = new SAXBuilder();
@@ -90,6 +91,7 @@ public class CurrenciesListParser {
 		
 		Element mainCube = root.getChild(CUBE_NAME, ns);
 		Element subCube = mainCube.getChild(CUBE_NAME, ns);
+		sourceDate = subCube.getAttributeValue("time");
 
 		List<Element> currenciesCube = subCube.getChildren(CUBE_NAME, ns);
 		Iterator<Element> it = currenciesCube.iterator();
@@ -102,6 +104,10 @@ public class CurrenciesListParser {
 		}
 
 		return currenciesList;
+	}
+
+	public String getSourceDate() {
+		return sourceDate;
 	}
 
 }
