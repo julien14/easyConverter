@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="explanation">Convertit une devise en une autre. Si le programme ne peut pas se connecter via internet, alors il utilisera les valeurs en cache.
+        Les taux de conversions sont de la date indiqué ci dessous.</string>
+    <string name="internet_connection_needed">Vous devez vous conecter à internet pour récupérer les taux de changes</string>
+</resources>
