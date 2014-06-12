@@ -34,9 +34,7 @@ public class CurrenciesArrayAdapter extends ArrayAdapter<Currency> {
 			    View rowView = inflater.inflate(R.layout.currency_item_layout, parent, false);
 			    TextView textView = (TextView) rowView.findViewById(R.id.currency_title);
 			    
-			    textView.setText(getItem(position).getName());
-			 
-
+			    textView.setText(getItem(position).getCode() + "-" + getItem(position).getName());
 			    return rowView;
 	}
 

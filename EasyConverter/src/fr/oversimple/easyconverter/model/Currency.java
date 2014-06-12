@@ -2,12 +2,22 @@ package fr.oversimple.easyconverter.model;
 
 public class Currency {
 
+	private String code;
 	private String name;
 	private double changeRate;
 	
-	public Currency(String name, double changeRate) {
+	public Currency(String code, String name, double changeRate) {
+		this.code = code;
 		this.name = name;
 		this.changeRate = changeRate;
+	}
+	
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 	
 	public String getName() {
@@ -25,8 +35,10 @@ public class Currency {
 
 	@Override
 	public String toString() {
-		return "Currency [name=" + name + ", changeRate=" + changeRate + "]";
+		return "Currency [code=" + code + ", name=" + name + ", changeRate="
+				+ changeRate + "]";
 	}
+
 	
 	
 }

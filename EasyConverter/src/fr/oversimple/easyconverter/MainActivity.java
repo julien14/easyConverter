@@ -99,7 +99,7 @@ public class MainActivity extends Activity implements
 		TextView resulttextView = (TextView) findViewById(R.id.resultTextView);
 		double result = (Double.parseDouble(amountEditText.getText().toString())
 				* leftCurrency.getChangeRate()) / rightCurrency.getChangeRate();
-		resulttextView.setText(result + " " + leftCurrency.getName());
+		resulttextView.setText(result + " " + leftCurrency.getCode());
 	}
 
 	public void rightButtonClicked(View v) {
@@ -109,7 +109,7 @@ public class MainActivity extends Activity implements
 		TextView resulttextView = (TextView) findViewById(R.id.resultTextView);		
 		double result = (Double.parseDouble(amountEditText.getText().toString())
 				* rightCurrency.getChangeRate()) / leftCurrency.getChangeRate();
-		resulttextView.setText(result + " " + rightCurrency.getName());
+		resulttextView.setText(result + " " + rightCurrency.getCode());
 	}
 
 	private boolean checkEquationParameter() {
@@ -156,13 +156,12 @@ public class MainActivity extends Activity implements
 		if(parent.equals(leftCurrenciesSpinner)) {
 			leftCurrency = currenciesHelper.getCurrenciesList().get(pos);
 			Button leftButton = (Button) findViewById(R.id.leftButton);
-			leftButton.setText(leftCurrency.getName());
+			leftButton.setText(leftCurrency.getCode());
 		} else if(parent.equals(rightCurrenciesSpinner)) {
 			rightCurrency = currenciesHelper.getCurrenciesList().get(pos);
 			Button rightButton = (Button) findViewById(R.id.rightButton);
-			rightButton.setText(rightCurrency.getName());
+			rightButton.setText(rightCurrency.getCode());
 		} 
-		
 		
 	}
 
