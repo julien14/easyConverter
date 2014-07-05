@@ -1,4 +1,4 @@
-package fr.oversimple.easyconverter.adapter;
+package fr.oversimple.easyconverter.activities.adapter;
 
 import java.util.List;
 
