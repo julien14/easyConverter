@@ -22,9 +22,6 @@ import com.android.volley.VolleyError;
 
 import fr.oversimple.easyconverter.EasyConverterApplication;
 import fr.oversimple.easyconverter.R;
-import fr.oversimple.easyconverter.R.id;
-import fr.oversimple.easyconverter.R.layout;
-import fr.oversimple.easyconverter.R.string;
 import fr.oversimple.easyconverter.activities.adapter.CurrenciesArrayAdapter;
 import fr.oversimple.easyconverter.model.CurrenciesHelper;
 import fr.oversimple.easyconverter.model.CurrenciesListParser;
